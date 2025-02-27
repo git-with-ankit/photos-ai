@@ -1,1 +1,1 @@
-# photos-ai
+# photos-ai is an AI image platform that lets you generate images and train custom AI models. 
