@@ -1,0 +1,4 @@
+-- AlterTable
+ALTER TABLE "Model" ALTER COLUMN "userId" DROP NOT NULL,
+ALTER COLUMN "trainingStatus" DROP NOT NULL,
+ALTER COLUMN "zipUrl" DROP NOT NULL;

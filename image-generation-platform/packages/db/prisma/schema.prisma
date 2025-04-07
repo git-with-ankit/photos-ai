@@ -10,7 +10,7 @@ datasource db {
 
 model User  {
   id     String    @id @default(uuid())
-  clerkId String   @unique
+  password String
   email   String   @unique
   name    String?
   profilePicture  String?
@@ -36,12 +36,12 @@ model Model{
   triggerWord   String?
   tensorPath    String?
   thumbnail    String?
-  trainingStatus  ModelTrainingStatusEnum
+  trainingStatus  ModelTrainingStatusEnum?
   outputImages   OutputImages[]
   createdAt     DateTime   @default(now())
   updatedAt     DateTime    @updatedAt
   falAiRequestId  String?
-  zipUrl     String
+  zipUrl     String?
   open      Boolean @default(false)
   @@index([falAiRequestId])
 
@@ -58,7 +58,7 @@ model OutputImages {
   id        String  @id   @default(uuid())
   imageUrl  String  @default("")
   modelId   String
-  userId    String
+  userId    String?
   prompt    String
   falAiRequestId    String?
   status    OutputImageStatusEnum   @default(Pending)
